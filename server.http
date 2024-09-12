@@ -1,0 +1,21 @@
+
+## get all todos
+GET http://localhost:3000/todo/
+
+POST http://localhost:3000/addTodo/
+
+{
+    "text":"Learn TS",
+    "ischecked":0
+}
+
+GET http://localhost:3000/todo/1/
+
+DELETE http://localhost:3000/todo/7/
+
+PUT http://localhost:3000/todoDelete/6/
+
+{
+    "text":"Learn Flying",
+    "ischecked":0
+}
