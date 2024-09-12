@@ -3,7 +3,7 @@ const path=require('path')
 const bodyParser=require('body-parser')
 const helmet=require('helmet')
 const dbPath=path.join(__dirname,'database.db')
-const sqlite3=require('better-sqlite3')
+const sqlite3=require('sqlite3')
 const {open}=require('sqlite')
 const cors=require('cors')
 const app=express()
@@ -21,9 +21,9 @@ const InitializingDataBase=async ()=>{
             filename: dbPath,
             driver: sqlite3.Database
         })
-    
-        app.listen(3000,()=>{
-            console.log('Server is Starting...')
+        const port = process.env.PORT || 3000;
+        app.listen(port,()=>{
+            console.log(`Server is Starting...${port}`)
         })
     }
     catch (e) {
